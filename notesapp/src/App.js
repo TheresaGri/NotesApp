@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import DisplayNotes from "./DisplayNotes";
+import DisplayNotes from "./components/DisplayNotes";
 
 function App() {
   const [notes, setNotes] = useState([
