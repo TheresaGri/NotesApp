@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./DisplayNotes.css";
-import SelectCategory from "./Selection";
+import SelectCategory from "./SelectCategory";
 
 
 const DisplayNotes = ({ notes, deleteButton }) => {
@@ -22,9 +22,10 @@ const DisplayNotes = ({ notes, deleteButton }) => {
       }}
     >
       {notes.map((note) => (
-        <div key={note.id} className="box">
+        <div key={note.id} className="box" style = {{backgroundColor: `${selection === "work"? "yellow": "red"}`}} >
           {note.text}
           <button onClick={() => deleteButton(note.id)}>delete</button>
+          {selection}
           <SelectCategory value={selection} changeSelection={changeSelection} />
         </div>
       ))}
